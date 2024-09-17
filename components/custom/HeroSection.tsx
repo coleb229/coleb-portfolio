@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { Terminal, Globe, Zap, Frame } from "lucide-react"
+import { Terminal, Globe, Zap, Frame, Triangle, Pyramid, Cpu, Wind } from "lucide-react"
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState('')
@@ -26,12 +26,21 @@ export default function HeroSection() {
   const technologies = [
     { name: 'React', icon: <Zap className="h-6 w-6" /> },
     { name: 'Node.js', icon: <Terminal className="h-6 w-6" /> },
-    { name: 'Next.js', icon: <Frame className="h-6 w-6" /> },
+    { name: 'Next.js', icon: <Triangle className="h-6 w-6" /> },
     { name: 'MongoDB', icon: <Globe className="h-6 w-6" /> },
+    { name: 'Prisma', icon: <Pyramid className="h-6 w-6" /> },
+    { name: 'TypeScript', icon: <Frame className="h-6 w-6" /> },
+    { name: 'Python', icon: <Cpu className="h-6 w-6" /> },
+    { name: 'Tailwind CSS', icon: <Wind className="h-6 w-6" /> },
   ]
 
+  const handleScroll = (index:any) => {
+    const section = document.getElementById(`section-${index}`);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="w-full snap-start h-screen flex items-center justify-center p-4">
+    <div className="w-full snap-start h-screen flex items-center justify-center p-4" id='section-0'>
       <div className="max-w-5xl w-full space-y-8">
         <div className="relative">
           <div className="absolute inset-0 bg-primary/30 transform skew-y-3 rounded-3xl"></div>
@@ -48,10 +57,10 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button className="group relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary/90 hover:text-black">
-                <span className="relative z-10">Explore My Work</span>
+                <span onClick={() => handleScroll(1)} className="relative z-10">Explore My Work</span>
                 <span className="absolute inset-0 bg-secondary transform translate-y-full transition-transform group-hover:translate-y-0"></span>
               </Button>
-              <Button variant="outline" className="group border-primary text-primary hover:bg-primary/10">
+              <Button onClick={() => handleScroll(2)} variant="outline" className="group border-primary text-primary hover:bg-primary/10">
                 <span>Let{"'"}s Connect</span>
                 <Zap className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
               </Button>

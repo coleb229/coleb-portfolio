@@ -34,7 +34,7 @@ const projects: Project[] = [
     description: "A full-stack call note template solution with React, Next.js, and MongoDB",
     imageUrl: "/images/callnotes.png",
     deployedUrl: "https://improved-call-notes-app.vercel.app/",
-    githubUrl: "https://github.com/coleb229/improved-call-notes"
+    githubUrl: "https://github.com/coleb229/improved-call-notes-app"
   },
   {
     id: 4,
@@ -48,12 +48,12 @@ const projects: Project[] = [
 
 export default function ProjectShowcase() {
   return (
-    <div className="container snap-start h-screen mx-auto py-12">
-      <div className="w-full h-full overflow-y-auto">
+    <div className="container snap-start h-screen mx-auto py-12" id='section-1'>
+      <div className="w-full h-full px-4 overflow-y-auto">
         <h2 className="text-3xl font-bold text-center mb-8">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105 bg-white/95">
               <CardHeader className="p-0">
                 <div className="relative h-48 overflow-hidden">
                   <img 
