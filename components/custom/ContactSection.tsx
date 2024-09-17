@@ -62,7 +62,7 @@ export default function BlurredContactSection() {
                 <span className="text-black font-medium">Twitter</span>
               </a>
             </div>
-            <p className="text-black/80 text-sm">Let's create something amazing together!</p>
+            <p className="text-black/80 text-sm">Let{"'"}s create something amazing together!</p>
           </div>
           <div className="lg:w-2/3 bg-white/95 backdrop-blur-md p-6 rounded-lg shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-4">

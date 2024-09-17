@@ -34,7 +34,7 @@ export default function HeroSection() {
     { name: 'Tailwind CSS', icon: <Wind className="h-6 w-6" /> },
   ]
 
-  const handleScroll = (index:any) => {
+  const handleScroll = (index:number) => {
     const section = document.getElementById(`section-${index}`);
     section?.scrollIntoView({ behavior: "smooth" });
   };
