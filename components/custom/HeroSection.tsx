@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { Terminal, Cpu, Globe, Zap, Frame } from "lucide-react"
+import { Terminal, Globe, Zap, Frame } from "lucide-react"
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState('')
@@ -52,7 +52,7 @@ export default function HeroSection() {
                 <span className="absolute inset-0 bg-secondary transform translate-y-full transition-transform group-hover:translate-y-0"></span>
               </Button>
               <Button variant="outline" className="group border-primary text-primary hover:bg-primary/10">
-                <span>Let's Connect</span>
+                <span>Let{"'"}s Connect</span>
                 <Zap className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
               </Button>
             </div>
@@ -60,7 +60,7 @@ export default function HeroSection() {
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {technologies.map((tech, index) => (
+          {technologies.map((tech) => (
             <div key={tech.name} className="bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-md flex items-center justify-center flex-col space-y-2 group hover:bg-white transition-colors">
               <div className="text-primary">{tech.icon}</div>
               <span className="text-sm font-medium text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity">
