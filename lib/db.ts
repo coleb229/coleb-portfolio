@@ -3,7 +3,7 @@ import { prisma } from './prisma'
 
 export const sendMessage = async (formData:FormData) => {
   try {
-    const message = await prisma.message.create({
+    await prisma.message.create({
       data: {
         name: formData.get('name') as string,
         email: formData.get('email') as string,
@@ -11,9 +11,10 @@ export const sendMessage = async (formData:FormData) => {
         timestamp: new Date().toDateString(),
       },
     });
-    return message;
+
   } catch (error) {
     console.error("Error sending message:", error);
     throw new Error("Failed to send message");
+    return { error: "Failed to send message" };
   }
 }

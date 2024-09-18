@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { FaGithub, FaInstagram, FaTwitter, FaPaperPlane } from 'react-icons/fa'
 import { sendMessage } from '@/lib/db'
+import { toast } from 'react-toastify'
+import { redirect } from 'next/navigation'
 
 export default function BlurredContactSection() {
   const [typedText, setTypedText] = useState('')
@@ -28,8 +30,16 @@ export default function BlurredContactSection() {
 
   const handleSubmit = async (formData:FormData) => {
     setIsSubmitting(true);
-    await sendMessage(formData);
+
+    const result = await sendMessage(formData);
+    if(result?.error) {
+      toast.error('Error sending message');
+    } else {
+      toast.success('Message sent successfully');
+    }
+
     setIsSubmitting(false);
+    redirect('/');
   }
 
 /*
