@@ -28,10 +28,12 @@ export default function HeroSection() {
     { name: 'Node.js', icon: <Terminal className="h-6 w-6" /> },
     { name: 'Next.js', icon: <Triangle className="h-6 w-6" /> },
     { name: 'MongoDB', icon: <Globe className="h-6 w-6" /> },
+    /*
     { name: 'Prisma', icon: <Pyramid className="h-6 w-6" /> },
     { name: 'TypeScript', icon: <Frame className="h-6 w-6" /> },
     { name: 'Python', icon: <Cpu className="h-6 w-6" /> },
     { name: 'Tailwind CSS', icon: <Wind className="h-6 w-6" /> },
+     */
   ]
 
   const handleScroll = (index:number) => {

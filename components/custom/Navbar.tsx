@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { name: 'Home', href: '#section-0' },
@@ -9,7 +10,12 @@ const navItems = [
   { name: 'Contact', href: '#section-2' },
 ]
 
-export default function Navbar() {
+interface NavbarProps {
+  isOpen: boolean
+  setIsOpen: (isOpen: boolean) => void
+}
+
+export default function Navbar({ isOpen, setIsOpen }: NavbarProps) {
   const [activeSection, setActiveSection] = useState('')
   const observerRef = useRef<IntersectionObserver | null>(null)
 
@@ -51,36 +57,45 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+    setIsOpen(false)
   }
 
   return (
-    <nav className="fixed left-0 top-0 bottom-0 z-50 w-24 bg-primary/80 bg-opacity-90 backdrop-blur-sm flex items-center hover:scale-105 hover:bg-primary duration-200">
-      <div className="w-full">
-        <ul className="flex flex-col items-center space-y-8">
-          {navItems.map((item) => (
-            <li key={item.name} className="relative">
-              <a
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleClick(item.href)
-                }}
-                className="inline-block p-2 text-secondary hover:text-secondary-foreground transition-colors duration-300"
-              >
-                {item.name}
-              </a>
-              {activeSection === item.name.toLowerCase() && (
-                <motion.div
-                  className="absolute left-0 bottom-0 w-full h-0.5 bg-secondary"
-                  initial={{ width: 0 }}
-                  animate={{ width: '100%' }}
-                  transition={{ duration: 0.3 }}
-                />
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <>
+      <button
+        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-primary/80 text-secondary rounded-md"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+      <nav className={`fixed md:left-0 top-0 bottom-0 z-40 w-64 md:w-24 bg-primary/80 backdrop-blur-sm flex items-center transition-transform duration-300 ease-in-out ${isOpen ? 'left-0' : '-left-64 md:left-0'}`}>
+        <div className="w-full">
+          <ul className="flex flex-col items-center space-y-8">
+            {navItems.map((item) => (
+              <li key={item.name} className="relative w-full text-left">
+                <a
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleClick(item.href)
+                  }}
+                  className="inline-block p-2 text-secondary hover:text-secondary-foreground transition-colors duration-300"
+                >
+                  {item.name}
+                </a>
+                {activeSection === item.name.toLowerCase() && (
+                  <motion.div
+                    className="absolute left-0 bottom-0 w-full h-0.5 bg-secondary"
+                    initial={{ width: 0 }}
+                    animate={{ width: '85%' }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </>
   )
 }

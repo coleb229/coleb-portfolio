@@ -1,13 +1,18 @@
-import HeroSection from "@/components/custom/HeroSection";
-import ProjectShowcase from "@/components/custom/ProjectsSection";
-import ContactSection from "@/components/custom/ContactSection";
-import Navbar from "@/components/custom/Navbar";
+'use client'
+
+import { useState } from 'react'
+import HeroSection from "@/components/custom/HeroSection"
+import ProjectShowcase from "@/components/custom/ProjectsSection"
+import ContactSection from "@/components/custom/ContactSection"
+import Navbar from "@/components/custom/Navbar"
 
 export default function Home() {
+  const [isNavOpen, setIsNavOpen] = useState(false)
+
   return (
-    <div className="flex">
-      <Navbar />
-      <div className="flex-1 ml-24">
+    <div className="flex flex-col md:flex-row">
+      <Navbar isOpen={isNavOpen} setIsOpen={setIsNavOpen} />
+      <div className="flex-1 md:ml-24">
         <div className="snap-y snap-mandatory h-screen w-full overflow-y-scroll">
           <section id="section-0" className="snap-start">
             <HeroSection />
@@ -21,5 +26,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }
