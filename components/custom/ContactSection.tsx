@@ -35,7 +35,7 @@ export default function BlurredContactSection() {
   }
 
   return (
-    <section className="h-screen snap-start flex items-center justify-center relative overflow-hidden" id='section-2'>
+    <section className="h-screen snap-start flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-primary/[0.05] bg-[size:20px_20px]"></div>
       <div className="absolute inset-0 backdrop-blur-[2px]"></div>
       <div className="container mx-auto px-4 relative z-20 py-8">

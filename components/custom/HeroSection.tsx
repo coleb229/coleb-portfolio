@@ -40,7 +40,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="w-full snap-start h-screen flex items-center justify-center p-4" id='section-0'>
+    <div className="w-full snap-start h-screen flex items-center justify-center p-4">
       <div className="max-w-5xl w-full space-y-8">
         <div className="relative">
           <div className="absolute inset-0 bg-primary/30 transform skew-y-3 rounded-3xl"></div>
