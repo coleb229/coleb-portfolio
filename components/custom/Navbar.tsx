@@ -68,7 +68,7 @@ export default function Navbar({ isOpen, setIsOpen }: NavbarProps) {
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
-      <nav className={`fixed md:left-0 top-0 bottom-0 z-40 w-64 md:w-24 bg-primary/80 backdrop-blur-sm flex items-center transition-transform duration-300 ease-in-out ${isOpen ? 'left-0' : '-left-64 md:left-0'}`}>
+      <nav className={`fixed md:left-0 top-0 bottom-0 z-40 w-64 md:w-24 bg-primary/80 backdrop-blur-sm flex items-center transition-transform hover:scale-105 hover:bg-primary duration-300 ease-in-out ${isOpen ? 'left-0' : '-left-64 md:left-0'}`}>
         <div className="w-full">
           <ul className="flex flex-col items-center space-y-8">
             {navItems.map((item) => (

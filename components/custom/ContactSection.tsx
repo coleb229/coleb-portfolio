@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { FaGithub, FaInstagram, FaTwitter, FaPaperPlane } from 'react-icons/fa'
+import { sendMessage } from '@/lib/db'
 
 export default function BlurredContactSection() {
   const [typedText, setTypedText] = useState('')
@@ -25,15 +26,45 @@ export default function BlurredContactSection() {
     return () => clearInterval(typingEffect)
   }, [])
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setIsSubmitting(true)
-    // TODO: Implement form submission logic with Twilio integration
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    setIsSubmitting(false)
-    console.log('Form submitted')
+  const handleSubmit = async (formData:FormData) => {
+    setIsSubmitting(true);
+    await sendMessage(formData);
+    setIsSubmitting(false);
   }
 
+/*
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+  
+    const formData = {
+      name: event.currentTarget.nameOfSender.value,
+      email: event.currentTarget.email.value,
+      message: event.currentTarget.message.value,
+    };
+  
+    try {
+      const response = await fetch('/api/send-sms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await response.json();
+      if (result.success) {
+        console.log('Message sent successfully');
+      } else {
+        console.error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  
+    setIsSubmitting(false);
+  };
+*/
   return (
     <section className="h-screen snap-start flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-primary/[0.05] bg-[size:20px_20px]"></div>
@@ -65,7 +96,7 @@ export default function BlurredContactSection() {
             <p className="text-black/80 text-sm">Let{"'"}s create something amazing together!</p>
           </div>
           <div className="lg:w-2/3 bg-white/95 backdrop-blur-md p-6 rounded-lg shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form action={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">
                   <Input type="text" id="name" name="name" required className="peer border border-primary/80 focus:border-primary bg-transparent text-black/60" placeholder=" " />
