@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { Terminal, Globe, Zap, Frame, Triangle, Pyramid, Cpu, Wind } from "lucide-react"
+import { Terminal, Globe, Zap, Triangle } from "lucide-react"
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState('')
