@@ -51,6 +51,14 @@ const projects: Project[] = [
     imageUrl: "/images/message-receiver.png",
     deployedUrl: "https://message-receiver.vercel.app/",
     githubUrl: "https://github.com/coleb229/message-receiver"
+  },
+  {
+    id: 6,
+    title: "HTML Canvas Fighting Game",
+    description: "A fighting game built with HTML Canvas and JavaScript.",
+    imageUrl: "/images/fighting-game.png",
+    deployedUrl: "https://coleb229.github.io/canvas-game/",
+    githubUrl: "https://github.com/coleb229/canvas-game"
   }
 ]
 
