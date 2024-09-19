@@ -6,8 +6,9 @@ import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { name: 'Home', href: '#section-0' },
-  { name: 'Projects', href: '#section-1' },
-  { name: 'Contact', href: '#section-2' },
+  { name: 'About Me', href: '#section-1' },
+  { name: 'Projects', href: '#section-2' },
+  { name: 'Contact', href: '#section-3' },
 ]
 
 interface NavbarProps {

@@ -44,6 +44,14 @@ const projects: Project[] = [
     deployedUrl: "https://support-kb.vercel.app/",
     githubUrl: "https://github.com/coleb229/support-kb"
   },
+  {
+    id: 5,
+    title: "Message Receiver",
+    description: "I built this app to receive messages from this site.",
+    imageUrl: "/images/message-receiver.png",
+    deployedUrl: "https://message-receiver.vercel.app/",
+    githubUrl: "https://github.com/coleb229/message-receiver"
+  }
 ]
 
 export default function ProjectShowcase() {

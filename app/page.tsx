@@ -4,6 +4,7 @@ import { useState } from 'react'
 import HeroSection from "@/components/custom/HeroSection"
 import ProjectShowcase from "@/components/custom/ProjectsSection"
 import ContactSection from "@/components/custom/ContactSection"
+import AboutMe from '@/components/custom/AboutMeSection'
 import Navbar from "@/components/custom/Navbar"
 
 export default function Home() {
@@ -18,9 +19,12 @@ export default function Home() {
             <HeroSection />
           </section>
           <section id="section-1" className="snap-start">
-            <ProjectShowcase />
+            <AboutMe />
           </section>
           <section id="section-2" className="snap-start">
+            <ProjectShowcase />
+          </section>
+          <section id="section-3" className="snap-start">
             <ContactSection />
           </section>
         </div>
