@@ -76,7 +76,7 @@ export default function AboutMe() {
         >
           <div className="space-y-4">
             <p className="text-lg">
-              I'm a self-taught web developer based in Wisconsin with a dirve to create engaging and user-friendly web applications. My journey in tech began with a curiosity for how things work, leading me to explore various programming languages and frameworks.
+              I{"'"}m a self-taught web developer based in Wisconsin with a dirve to create engaging and user-friendly web applications. My journey in tech began with a curiosity for how things work, leading me to explore various programming languages and frameworks.
             </p>
             <p className="text-lg">
               As a passionate web developer, I specialize in creating dynamic and responsive web applications that provide seamless user experiences.  I have always been fascinated by technology and its ability to connect people and ideas.
