@@ -7,13 +7,11 @@ import Image from 'next/image'
 export default function AboutMe() {
   const controls = useAnimation()
   const sectionRef = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
           controls.start('visible')
         }
       },
