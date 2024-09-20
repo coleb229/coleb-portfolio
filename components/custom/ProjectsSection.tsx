@@ -13,6 +13,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 0,
+    title: "Multitool App",
+    description: "A full-stack webapp that includes tools like budget tracker, planner, and more.  Utilizing Vercel v0 for UI generation.",
+    imageUrl: "/images/multitool.png",
+    deployedUrl: "https://life-multitool.vercel.app/budget",
+    githubUrl: "https://github.com/coleb229/life-multitool"
+  },
+  {
     id: 1,
     title: "Fitness Journal",
     description: "A full-stack fitness journal solution with React, Next.js, and MongoDB",
