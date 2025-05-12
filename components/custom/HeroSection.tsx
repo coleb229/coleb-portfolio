@@ -59,10 +59,10 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button className="group relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary/90 hover:text-black">
-                <span onClick={() => handleScroll(1)} className="relative z-10">Explore My Work</span>
+                <span onClick={() => handleScroll(2)} className="relative z-10">Explore My Work</span>
                 <span className="absolute inset-0 bg-secondary transform translate-y-full transition-transform group-hover:translate-y-0"></span>
               </Button>
-              <Button onClick={() => handleScroll(2)} variant="outline" className="group border-primary text-primary hover:bg-primary/10">
+              <Button onClick={() => handleScroll(3)} variant="outline" className="group border-primary text-primary hover:bg-primary/10">
                 <span>Let{"'"}s Connect</span>
                 <Zap className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
               </Button>
